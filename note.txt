@@ -1,0 +1,31 @@
+GIT_HUB_ACCESS_TOKEN: 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
+GIT_LAB_ACCESS_TOKEN: glpat-YmMST_9HuqeTxQLNXEEn
+
+
+==============MYSQL local
+	user-name:admin
+	pass:admin
+
+
+================MYSQL_CONTAINER
+	docker exec -it some-mysql bash
+	mysql -uroot -p
+	
+	user_admin: root
+	password:   root
+
+
+====================== Mongo DB Container 
+ mongosh --username root --password  --host "localhost" --port 27017
+
+=====================KeyCloack
+		docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:22.0.3 start-dev
+
+https://www.amazon.com/Certified-Professional-Developer-1Z0-829-Programmers/dp/0137993641/?tag=crfa12-20
+
+=========================================================
+
+
+database ecomerge: https://dev.to/ezzdinatef/ecommerce-database-design-1ggc
+		https://fabric.inc/blog/commerce/ecommerce-database-design-example
+
