@@ -1,0 +1,30 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: product-service
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      # <Port exposed>: <MySQL port running inside container>
+      - '3306:3306'
+    expose:
+      # Open port 3306 on the container, but not publish to host
+      - '3306'
+    networks:
+      - mysql_default      
+    # where our data persisted
+    volumes:
+      - mysql_volume:/var/lib/mysql
+
+  # Names our volume
+volumes:
+  mysql_volume:
+    driver: local
+
+networks:
+  mysql_default:
+    driver: bridge
