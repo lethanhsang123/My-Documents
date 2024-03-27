@@ -1,0 +1,46 @@
+access to Postgres: 
+	psql -d postgres -U admin -W
+	psql -h my-psql-db.cloud.neon.tech -d tutorials_db -U admin -W
+	psql -h hostname -d database -U username -p port   
+
+VIEW:
+	List all databases: \l
+	List database tables: \dt
+	List all tables in schema: 
+		\dt schema_name.*
+		SELECT tablename FROM pg_tables WHERE schemaname = 'your_schema_name';
+	List all schemas: \dn
+	List all functions: \df
+	List all functions: \df
+	List all views: \dv
+	List users and their roles: \du
+	Retrieve a specific user: \du <user-name>
+	View current DB connecting: SELECT current_database();
+	SELECT current_user;
+
+CREATE: 
+	CREATE DATABASE mydb;
+	CREATE SCHEMA my_new_schema
+	CREATE TABLE my_table1 ( column1 INT, column2 VARCHAR(50) )
+	CREATE TABLE my_table2 ( column1 INT, column2 DATE );
+	CREATE USER myuser WITH PASSWORD 'mypassword';
+	
+DELETE
+
+ETC:
+	Switch to another database: \c <db-name>
+	Describe a table: \d <table-name>
+	Run commands from a file: \i <file-name>
+	Quit psql: \q
+	Reset password user: ALTER USER username PASSWORD 'newpassword';
+	Copy DDL file into docker container:    docker cp /path/to/your/schema.sql <container-id>:/tmp/schema.sql
+	Execute Script: docker exec -it <container-id> psql -U your_username -d your_database -f /tmp/schema.sql	
+
+GRANT PRIVILEGES TO USER:
+	GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+	GRANT SELECT, INSERT, UPDATE, DELETE ON mytable TO myuser;
+        GRANT all privileges ON SCHEMA schema_name TO user_name;
+	GRANT usage ON SCHEMA schema_name TO user_name;
+
+
+	

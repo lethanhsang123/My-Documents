@@ -1,0 +1,28 @@
+# docker version
+version: "3"
+
+services:  
+  keycloak-server:    
+    image: quay.io/keycloak/keycloak:latest        
+    command: start-dev
+    volumes:
+      - ./volume/realm-config:/opt/jboss/keycloak/realm-config
+    environment:      
+      KC_DB: postgres
+      KC_DB_URL_HOST: postgres
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_PASSWORD: admin
+      KC_DB_USERNAME: admin_keycloak
+      KC_DB_SCHEMA: keycloak
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin      
+    ports:      
+      - "8080:8080"
+    networks:
+      - postgres_default
+
+networks:
+  postgres_default:
+    external: true #The external: true line under the definition for your_network_name 
+                   #indicates that this network has been created outside of Docker Compose, 
+                   #implying that it is a pre-existing network.
