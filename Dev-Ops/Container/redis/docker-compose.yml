@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  redis-master:
+    image: redis:latest
+    restart: no # configures the restart policy: no(default)/on-failure/unless-stopped/
+    expose: ['6379']
+    ports: 
+      - '6379:6379'
+    networks:
+      - my-network
+    volumes:
+      - redis-master:/data
+
+  redis-slave:
+    image: redis:latest
+    restart: no
+    expose: ['6479']
+    ports:
+      - '6479:6479'
+    volumes:
+      - redis-slave:/data
+    networks:
+      - my-network
+    command: redis-server --slaveof redis-master 6379
+
+networks:
+  my-network:
+    driver: bridge
+    external: true
+
+volumes:
+  redis-master:
+  redis-slave:
