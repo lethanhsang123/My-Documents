@@ -1,0 +1,3 @@
+- redis container: docker exec -it container-name bash
+- redis-cli command: redis-cli
+-	
