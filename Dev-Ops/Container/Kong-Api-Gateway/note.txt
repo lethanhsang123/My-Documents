@@ -1,4 +1,5 @@
 URI: https://learncode24h.com/how-to-install-kong-api-gateway-and-konga-on-docker/
+https://dev.to/nasrulhazim/setup-kong-gateway-with-docker-4m6l
 
 1. 	docker network create my-network
 
