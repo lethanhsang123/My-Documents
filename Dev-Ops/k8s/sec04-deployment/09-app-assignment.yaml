@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment
+spec:
+  selector:
+    matchLabels:
+      app: assignment
+  replicas: 1
+  template:
+    metadata:
+      labels: 
+        app: assignment
+    spec:
+      containers:
+      - name: assignment
+        image: vinsdocker/k8s-deploy-assignment
+        ports:
+        - name: "app-port"
+          containerPort: 8080
+        env:
+        - name: "spring.redis.host"
+          value: "10.244.1.3"
+          # Not the best solution. Just temporary
+        - name: "spring.redis.port"
+          value: "6379"
