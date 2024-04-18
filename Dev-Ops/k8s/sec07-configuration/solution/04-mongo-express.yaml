@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-express-deployment
+spec:
+  selector:
+    matchLabels:
+      app: mongo-express
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongo-express
+    spec:
+      containers:
+      - name: mongo-express-container
+        image: mongo-express:1.0.0-alpha.4
+        envFrom:
+        - secretRef:
+            name: mongo-express-secret
+        env:
+        - name: ME_CONFIG_MONGO_SERVER
+          value: mongo-db-deployment
+        ports:
+        - containerPort: 8081
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-express-service
+spec:
+  selector:
+    app: mongo-express
+  ports:
+  - port: 8081
+    targetPort: 8081
