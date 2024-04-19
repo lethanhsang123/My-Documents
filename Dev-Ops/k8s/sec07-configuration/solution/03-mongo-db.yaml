@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-db-deployment
+  name: mongo-db
 spec:
   selector:
     matchLabels:
@@ -13,11 +13,11 @@ spec:
         app: mongo-db
     spec:
       containers:
-      - name: mongo-db-container
+      - name: mongo-db
         image: mongo:4.4-focal
         envFrom:
         - secretRef:
-            name: mongo-db-secret
+            name: mongo-secret
         ports:
         - containerPort: 27017
         volumeMounts:
@@ -32,10 +32,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-db-service
+  name: mongo
 spec:
   selector:
     app: mongo-db
   ports:
   - port: 27017
-    targetPort: 27071
+    targetPort: 27017
