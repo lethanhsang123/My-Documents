@@ -6,11 +6,32 @@ spec:
   selector:
     matchLabels:
       app: my-app
-    replicas: 3
+  replicas: 3
   template:
     metadata:
       labels:
         app: my-app
     spec:
       containers:
+      - name: nginx
+        image: nginx
+        startupProbe:
+          exec:
+            command:
+            - "/bin/sh"
+            - "-c"
+            - 'echo "$(hostname)</br>" >> /usr/share/nginx/html/index.html'
+        volumeMounts:
+        - name: my-pvc
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: my-pvc
+    spec:
+      storageClassName: standard
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 5G
 
