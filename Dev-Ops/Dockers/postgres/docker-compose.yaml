@@ -1,23 +1,24 @@
-version: "3"
-services: 
+version: '3.5'
+
+services:
   postgres:
+    container_name: postgres_container
     image: postgres
-    container_name: postgres
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=product-service
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-1}
+      PGDATA: /data/postgres
     volumes:
-      - ./docker-volume/db:/var/lib/postgresql/data
+       - postgres:/data/postgres
     ports:
-      - 5432:5432
-#  pgadmin:
-#    image: dpage/pgadmin4
-#    container_name: pgadmin
-#    enviroment:
-#      - PGADMIN_DEFAULT_EMAIL=admin
-#      - PGADMIN_DEFAULT_PASSWORD=admin
-#    volumes:
-#      - ./docker-volume/pgadmin:/var/lib/pgadmin
-#    ports:
-#      - 9000:80
+      - "5432:5432"
+    networks:
+      - my-network
+    restart: unless-stopped
+  
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+    postgres:
