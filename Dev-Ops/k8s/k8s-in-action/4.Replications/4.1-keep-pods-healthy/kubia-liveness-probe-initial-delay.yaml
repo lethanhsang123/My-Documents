@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-liveness
+spec:
+  containers:
+  - image: luksa/kubia-unhealthy
+    name: kubia
+    livenessProbe:
+      httpGet:
+        path: /test/a
+        port: 8080
+      timeoutSeconds: 1       # Time so the container must return a response
+      periodSeconds: 10
+      failureThreshold: 3     # Pod is restared after the probe fails 3 consecutive times
+      successThreshold: 1     # number of times that the probe must report success after a failure in order to reset the probe process
+      initialDelaySeconds: 15 # Set time delay to the first probe after the container starts  

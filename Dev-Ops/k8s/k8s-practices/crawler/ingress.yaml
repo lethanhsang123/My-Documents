@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: crawler
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /crawler
+        pathType: Prefix
+        backend:
+          service:
+            name: crawler-service
+            port:
+              number: 8080
+          
+
