@@ -14,14 +14,13 @@ spec:
     spec:
       containers:
       - name: crawler-container
-        image: >-
-          registry.aggregatoricapaci.com/car-doctor/dev/dantri-crawler:latest
+        image: crawler:latest
         ports:
         - name: "crawler-port"
           containerPort: 8080
           protocol: TCP
-      imagePullSecrets:
-        - name: acregistry
+            #imagePullSecrets:
+            #- name: acregistry
       dnsPolicy: ClusterFirst
 
 ---
