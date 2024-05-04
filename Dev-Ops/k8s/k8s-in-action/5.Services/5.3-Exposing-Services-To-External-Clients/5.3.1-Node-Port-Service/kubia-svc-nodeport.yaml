@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: kubia-nodeport
 spec:
+  externalTrafficPolicy: Local # setting external connection(node) to pod exist in this node
   type: NodePort
   ports:
   - port: 80
