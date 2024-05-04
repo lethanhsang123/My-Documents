@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kubia-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /1
+        pathType: Prefix
+        backend:
+          service:
+            name: kubia-service-1
+            port: 
+              number: 80
+      - path: /2
+        pathType: Prefix
+        backend:
+          service:
+            name: kubia-service-2
+            port:
+              number: 80

@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-service-1
+spec:
+  #type: NodePort
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
+      #nodePort: 30123
+  - name: https
+    port: 443
+    targetPort: https
+      #nodePort: 30124
+      #sessionAffinity: ClientIP
+  selector:
+    app: kubia-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-service-2
+spec:
+  #type: NodePort
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
+      #nodePort: 30123
+  - name: https
+    port: 443
+    targetPort: https
+      #nodePort: 30124
+      #sessionAffinity: ClientIP
+  selector:
+    app: kubia-2
