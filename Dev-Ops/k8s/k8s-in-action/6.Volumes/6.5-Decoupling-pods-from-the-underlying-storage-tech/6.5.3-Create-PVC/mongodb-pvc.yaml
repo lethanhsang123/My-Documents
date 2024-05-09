@@ -5,7 +5,7 @@ metadata:
 spec:
   resources:
     requests:
-      storage: 1Gi  # Requesting 1 GiB of storage
+      storage: 1Gi
   accessModes:
-  - ReadWriteOnce   # Storage support a single client (performing both reads and writes)_
+  - ReadWriteOnce
   storageClassName: ""
