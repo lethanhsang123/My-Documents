@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  redis-master:
+    image: redis:latest
+    restart: no # configures the restart policy: no(default)/on-failure/unless-stopped/
+    expose: ['6379']
+    ports: 
+      - '6379:6379'
+    networks:
+      - postgres_postgres
+    volumes:
+      - redis-master:/data
+
+  redis-slave-1:
+    image: redis:latest
+    restart: no
+    expose: ['6379']
+    ports:
+      - '6479:6379'
+    volumes:
+      - redis-slave-1:/data
+    networks:
+      - postgres_postgres
+    command: redis-server --slaveof redis-master 6379
+  
+  redis-slave-2:
+    image: redis:latest
+    restart: no
+    expose: ['6379']
+    ports:
+      - '6579:6379'
+    volumes:
+      - redis-slave-2:/data
+    networks:
+      - postgres_postgres
+    command: redis-server --slaveof redis-master 6379
+  
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    restart: no
+    environment:
+      - REDIS_HOSTS=redis-master:redis-master,redis-slave-1:redis-slave-1,redis-slave-2:redis-slave-2
+    expose: ['8081']
+    ports:
+      - "8081:8081"
+    networks:
+      - postgres_postgres
+
+networks:
+  postgres_postgres:
+    driver: bridge
+    external: true
+
+volumes:
+  redis-master:
+  redis-slave-1:
+  redis-slave-2:
