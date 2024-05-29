@@ -71,10 +71,10 @@ plugins:                          # plugin list (sorted in alphabetical order)
   - batch-requests
   - consumer-restriction
   - cors
-  # - dubbo-proxy
+  - dubbo-proxy
   - echo
-  # - error-log-logger
-  # - example-plugin
+  - error-log-logger
+  - example-plugin
   - fault-injection
   - grpc-transcode
   - hmac-auth
@@ -86,8 +86,8 @@ plugins:                          # plugin list (sorted in alphabetical order)
   - limit-conn
   - limit-count
   - limit-req
-  # - log-rotate
-  # - node-status
+  - log-rotate
+  - node-status
   - openid-connect
   - prometheus
   - proxy-cache
@@ -100,7 +100,7 @@ plugins:                          # plugin list (sorted in alphabetical order)
   - response-rewrite
   - serverless-post-function
   - serverless-pre-function
-  # - skywalking
+  - skywalking
   - sls-logger
   - syslog
   - tcp-logger
