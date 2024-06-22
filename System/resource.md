@@ -21,6 +21,10 @@
 - [MDN Web Docs](https://developer.mozilla.org/en-US/)
 - [Glossary](https://www.f5.com/glossary)
 - [The Server Side](https://www.theserverside.com/)
+- [Scale Your App](https://scaleyourapp.com)
+- [Csdiy.wiki](https://csdiy.wiki/en/)
+- [Saleforce Architects](https://architect.salesforce.com/)
+- 
 
 ## IV. Source Repositories
 - [System Design Resources](https://github.com/lethanhsang123/system-design-resources)
