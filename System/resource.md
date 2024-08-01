@@ -25,6 +25,10 @@
 - [Csdiy.wiki](https://csdiy.wiki/en/)
 - [Saleforce Architects](https://architect.salesforce.com/)
 - [Eentuate Tram](https://eventuate.io/)
+- [Codemia IO](https://codemia.io/)
+- [System Design Interview](https://interviewing.io/guides/system-design-interview)
+- [ByteByteGo](https://bytebytego.com/)
+- [Design Gurus](https://www.designgurus.io/)
 
 ## IV. Source Repositories
 - [System Design Resources](https://github.com/lethanhsang123/system-design-resources)
