@@ -773,6 +773,12 @@ Others
 [5] [The Server Side](https://www.theserverside.com/)
 
 [6] [Software Construction](https://web.mit.edu/6.031/www/sp21/)
+
+[7] [Dev Java] (https://dev.java/)
+
+[8] [Inside Java] (https://inside.java/)
+
+[9] [Aleksey Shipolev] (https://shipilev.net/)
 --END--
 
 
