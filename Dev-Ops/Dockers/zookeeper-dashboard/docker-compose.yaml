@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  sentinel-dashboard:
+    image: sentinel/sentinel-dashboard:1.8.0
+    container_name: sentinel-dashboard
+    ports:
+      - "8080:8080"
+    environment:
+      - PREFERENCES_PATH=/root/.sentinel
+    volumes:
+      - sentinel-data:/root/.sentinel
+
+volumes:
+  sentinel-data:
+
