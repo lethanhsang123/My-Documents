@@ -779,6 +779,8 @@ Others
 [8] [Inside Java] (https://inside.java/)
 
 [9] [Aleksey Shipolev] (https://shipilev.net/)
+
+[10] [Java Challengers] (https://javachallengers.com/)
 --END--
 
 
