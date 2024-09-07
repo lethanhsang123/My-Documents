@@ -16,6 +16,8 @@
 - III. Source Repositories
 - IV. Blog & Community
 - V. Others
+- VI. [Resources Java](https://github.com/lethanhsang123/My-Documents/blob/main/Java-Spring/resource.md)
+- VII. [Resources System-Architecture](https://github.com/lethanhsang123/My-Documents/blob/main/System/resource.md)- VIV. Resources DevOps
 
 
 
