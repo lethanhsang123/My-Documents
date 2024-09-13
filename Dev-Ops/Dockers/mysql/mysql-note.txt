@@ -6,3 +6,10 @@
 
 # login to mysql by CLI
 	mysql -h localhost -u admin -p
+
+
+# Show all database: SHOW DATABASES;
+# Use database: USE my_database;
+# Show all tabels in DB: SHOW TABLES;
+
+
