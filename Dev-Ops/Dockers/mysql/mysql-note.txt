@@ -5,7 +5,7 @@
         docker exec -it mysql-mysql-1 bash
 
 # login to mysql by CLI
-	mysql -h localhost -u admin -p
+	mysql -h localhost -u myname -p mydb
 
 
 # Show all database: SHOW DATABASES;
