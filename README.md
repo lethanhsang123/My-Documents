@@ -24,6 +24,7 @@
 - [Glossary](https://www.f5.com/glossary)
 - [Theserverside](https://www.theserverside.com/)
 - [Salesforce - Architecture](https://architect.salesforce.com/)
+- [Vladmihalcea - SQL](https://vladmihalcea.com/)
   
 --END--
 
