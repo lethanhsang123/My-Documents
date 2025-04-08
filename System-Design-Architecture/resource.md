@@ -37,4 +37,5 @@
 - [Clean Architecture Example](https://github.com/lethanhsang123/clean-architecture-example)
 - [Low Level Design](https://github.com/lethanhsang123/Low-Level-Design)
 - [System Design Primer](https://github.com/lethanhsang123/system-design-primer)
+- [System Design Blogs](https://codersguild.github.io/System-Design/)
 
