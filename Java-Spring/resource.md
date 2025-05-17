@@ -781,6 +781,8 @@ Others
 [9] [Aleksey Shipolev] (https://shipilev.net/)
 
 [10] [Java Challengers] (https://javachallengers.com/)
+
+[11] [Java Pro] (https://javapro.io/)
 --END--
 
 
