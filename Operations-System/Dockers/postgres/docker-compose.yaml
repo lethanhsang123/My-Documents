@@ -7,6 +7,9 @@ services:
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-admin}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-1}
+      POSTGRES_HOST_AUTH_METHOD: md5
+      # POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+      # POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
       PGDATA: /data/postgres
     volumes:
        - postgres:/data/postgres
